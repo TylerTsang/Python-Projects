@@ -3,51 +3,34 @@
 # Fibonacci Sequence
 
 def Fibonacci_Sequence(n):
-    if type(n) not in (int):
-        raise TypeError('Please input a non-negative number')
-    elif n <= 0:
-        raise TypeError('Please input a non-negative number')
-    elif n == 1:
-        print("This Fibonacci sequence has {} element.".format(length), ":")
-        print(x)
+    # Raise a type error if the value is not an integer
+    if type(n) != int:
+        raise TypeError('Please input a real non-negative integer.')
+    # Raise a type error if the value is less than or equal to 0
+    elif n < 0:
+        raise TypeError('Please input a non-negative integer greater than 0.')
+    # Return 0 or 1 if the number placed in the function is 0 or 1 respectively
+    elif n <= 1:
+        print(f"This Fibonacci sequence has {n} element:")
+        print(n)
+    # Return the fibonacci sequence with the number specified
     else:
         x = 0
         y = 1
         iteration = 0
-        print("This Fibonacci sequence has {} element.".format(length), ":")
+        print(f"This Fibonacci sequence has {n} elements:")
         while iteration < n:
-            print(x, end=', ')
+            print(y, end=', ')
             z = x + y
             x = y
             y = z
             iteration += 1
-            
 
-# Testing the Fibonacci Sequence
-Fibonacci_Sequence(5)
-Fibonacci_Sequence(-1)
-Fibonacci_Sequence('number')
+#------------------------------------------------------------------
+# Testing the Fibonacci Sequence:
 
-# The length of our Fibonacci sequence
-length = 10
-
-# The first two values
-x = 0
-y = 1
-iteration = 0
-
-# Condition to check if the length has a valid input
-if length <= 0:
-   print("Please provide a number greater than zero")
-elif length == 1:
-   print("This Fibonacci sequence has {} element".format(length), ":")
-   print(x)
-else:
-   print("This Fibonacci sequence has {} elements".format(length), ":")
-   while iteration < length:
-       print(x, end=', ')
-       z = x + y
-       # Modify values
-       x = y
-       y = z
-       iteration += 1
+# Fibonacci_Sequence(10)
+# Fibonacci_Sequence(-1)
+# Fibonacci_Sequence('number')
+# Fibonacci_Sequence(5j-2)
+# Fibonacci_Sequence(2.5)
